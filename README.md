@@ -1,6 +1,6 @@
 # Tannenbaum
 
-TODO: Write a gem description
+Tannenbaum is an experimental tool for querying currency informal exchange rates.
 
 ## Installation
 
@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    [1] pry(main)> require 'tannenbaum'
+    => true
+    [2] pry(main)> quoting = Tannenbaum::Quote.new
+    => #<Tannenbaum::Quote:0x92993bc @provider=Tannenbaum::Providers::USD>
+    [3] pry(main)> rates = quoting.ask
+    => #<struct Tannenbaum::ExchangeRate
+          sell=10.77,
+          buy=10.72,
+          timestamp= #<DateTime: 2014-01-13T18:50:02+00:00 ((2456671j,67802s,0n),+0s,2299161j)>,
+          provider="elDolarBlue">
 
 ## Contributing
 

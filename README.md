@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/svankie/tannenbaum.png)](http://travis-ci.org/svankie/tannenbaum)
+
 # Tannenbaum
 
 Tannenbaum is an experimental tool for querying currency informal exchange rates.

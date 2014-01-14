@@ -5,6 +5,8 @@
 
 Tannenbaum is an experimental tool for querying currency informal exchange rates.
 
+**Warning**: Tannenbaum currently works only retrieving black-market exchange rates from USD (United States dollars) to ARS (Argentinian pesos), but I'm planning to add support for other informal exchange rates in countries with vibrant currency black-markets.
+
 ## Installation
 
 Add this line to your application's Gemfile:

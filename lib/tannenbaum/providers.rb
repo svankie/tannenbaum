@@ -3,7 +3,7 @@ module Tannenbaum
     # Our exchange rate data providers are defined here as separate classes.
     class USD
       # The name of the [Provider].
-      def self.name
+      def self.provider
         "elDolarBlue"
       end
       

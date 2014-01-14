@@ -4,8 +4,9 @@ require "open-uri"
 module Tannenbaum
   class Scraper
     # A [Scraper] that fetches and parses the exchange rate data from our -for now- only [Provider]. 
-    def initialize(provider)
-      @url = provider.url
+    def initialize(supplier)
+      @url = supplier.url
+      @provider = supplier.provider
     end
 
     # Processes the XML response of our [Provider]
@@ -30,6 +31,9 @@ module Tannenbaum
       # should have its own ::Scraper. i've to implement it.
       timestamp = extract_node_value(quote, :datetime)
       result[:timestamp] = parse_timestamp!(timestamp)
+
+      result[:provider] = @provider
+
       result
     end
 

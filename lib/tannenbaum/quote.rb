@@ -31,9 +31,9 @@ module Tannenbaum
     end
   end
 
-  class ExchangeRate < Struct.new(:sell, :buy, :timestamp)
+  class ExchangeRate < Struct.new(:sell, :buy, :timestamp, :provider)
     def initialize(hash)
-      super(*hash.values_at(:sell, :buy, :timestamp))
+      super(*hash.values_at(:sell, :buy, :timestamp, :provider))
     end
   end
 end

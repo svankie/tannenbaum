@@ -1,4 +1,5 @@
 [![Build Status](https://secure.travis-ci.org/svankie/tannenbaum.png)](http://travis-ci.org/svankie/tannenbaum)
+[![Gem Version](https://badge.fury.io/rb/tannenbaum.png)](http://badge.fury.io/rb/tannenbaum)
 
 # Tannenbaum
 

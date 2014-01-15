@@ -7,8 +7,8 @@ require 'tannenbaum/version'
 Gem::Specification.new do |spec|
   spec.name          = "tannenbaum"
   spec.version       = Tannenbaum::VERSION
-  spec.authors       = ["Horacio Bertorello"]
-  spec.email         = ["svankie@gmail.com"]
+  spec.authors       = ["Horacio Bertorello", "Ernesto Tagwerker"]
+  spec.email         = ["svankie@gmail.com", "ernesto@ombushop.com"]
   spec.description   = %q{Tannenbaum is a tool for querying currency informal exchange rates.}
   spec.summary       = %q{Tannenbaum is a tool for querying currency informal exchange rates.}
   spec.homepage      = "https://www.github.com/svankie/tannenbaum"

@@ -1,9 +1,13 @@
-require "nokogiri"
-require "open-uri"
+# encoding: utf-8
+
+require 'nokogiri'
+require 'open-uri'
 
 module Tannenbaum
   class Scraper
-    # A [Scraper] that fetches and parses the exchange rate data from our -for now- only [Provider]. 
+    # A [Scraper] that fetches and parses the exchange rate data
+    # from our (for now) only [Provider].
+    # @param [Provider]
     def initialize(supplier)
       @url = supplier.url
       @provider = supplier.provider
@@ -12,9 +16,9 @@ module Tannenbaum
     # Processes the XML response of our [Provider]
     # and return it as a [Hash].
     #
-    # @return [Hash] with fresh exchange rate data.
+    # @return [Hash]
     def process
-      xml_response = open(@url) rescue Hash.new
+      xml_response = open(@url) rescue {}
       quote = Nokogiri::XML(xml_response)
       parse_exchange_rates(quote)
     end
@@ -22,12 +26,12 @@ module Tannenbaum
     private
 
     def parse_exchange_rates(quote)
-      result = [:sell, :buy].inject({}) do |rates, key|
+      result = [:sell, :buy].reduce({}) do |rates, key|
         rate = extract_node_value(quote, key)
         rates[key] = sanitize_rate!(rate)
         rates
       end
-      # XXX: yeah, it's hardcoded. mayhaps every ::Provider 
+      # XXX: yeah, it's hardcoded. mayhaps every ::Provider
       # should have its own ::Scraper. i've to implement it.
       timestamp = extract_node_value(quote, :datetime)
       result[:timestamp] = parse_timestamp!(timestamp)
@@ -48,5 +52,5 @@ module Tannenbaum
     def parse_timestamp!(timestamp)
       DateTime.parse(timestamp) rescue DateTime.now
     end
-  end 
+  end
 end
